@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* http://127.0.0.1:*">
+  <link rel="stylesheet" type="text/css" href="imageset.css">
+  <title>New tab</title>
+</head>
+<body>
+  <div class="main">
+    <div class="DateAndTime">
+      <div id="AndTime"></div>
+      <div id="dateAnd"></div>
+    </div>
+    <!-- Search box -->
+    <input type="text" id="searchQuery" placeholder="Enter your search query">
+  
+    
+    <label for="bgImageInput">
+      <img src="img/icon/gallery.png" alt="Change Background Icon">
+    </label>
+    <input type="file" id="bgImageInput">
+    <button id="searchButton">
+      <img class="icon" src="img/icon/search.png" alt="Change Background Icon">
+    </button>
+    
+    <br>
+      
+    <!-- Add Website Link section -->
+    <div id="addWebsiteButton" >
+      <img class="link" src="img/icon/link.png" alt="Change Background Icon">
+    </div>
+    <div id="websiteList" ></div> <!-- Container to display added website links -->
+  </div>
+  <!-- Overlay -->
+  <div id="overlay"></div>
+  <!-- Dialog box for adding website link -->
+  <div id="websiteDialog">
+    <label class="inputDialog" for="websiteUrlDialog">Enter website URL</label>
+    <input type="text" id="websiteUrlDialog" placeholder="Enter website URL">
+    <button id="addWebsiteButtonDialog">Add Website Link</button>
+  </div>
+<button id="openDrawerBtn">Previous Image</button>
+<div id="drawer" class="drawer">
+  <div class="drawer-content">
+    <span id="closeDrawerBtn"  class="close">&times;</span>
+    <h2>Previous Image</h2>
+    <input type="file" id="bgImageInput">
+    <div id="cancelBtn"></div>
+    <div id="imageList" class="image-list">
+   
+    </div>
+  </div>
+</div>
+<div id="overlay2" class="overlay"></div>
+  <script src="newtab.js"></script>
+  <script src="imagesave.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

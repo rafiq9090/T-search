@@ -1,0 +1,55 @@
+/* options.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  select,
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  .custom-search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  button {
+    padding: 10px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-left: 5px;
+  }
+  button:hover {
+    background-color: #2d72d9;
+  }  
+  #saveOptions {
+    background-color: #4caf50;
+  } 
+  #saveOptions:hover {
+    background-color: #45a049;
+  }
+  

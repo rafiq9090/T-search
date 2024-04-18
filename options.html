@@ -1,0 +1,28 @@
+<!-- options.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Options</title>
+  <link rel="stylesheet" type="text/css" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Extension Options</h1> 
+    <label for="searchEngineUrl">Select/Search for a Search Engine:</label>
+    <select id="searchEngineUrl">
+      <option value="https://www.google.com/search?q=">Google</option>
+      <option value="https://www.bing.com/search?q=">Bing</option>
+      <!-- Add more options as needed -->
+    </select>
+    <div class="custom-search-container">
+      <input type="text" id="customSearchEngine" placeholder="Enter custom search engine URL">
+      <button id="addCustomSearchEngine">Add</button>
+      <button id="deleteCustomSearchEngine">Delete</button>
+    </div>
+    <button id="saveOptions">Save Options</button>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
