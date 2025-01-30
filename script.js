@@ -88,3 +88,4 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize the drawer when the DOM is loaded
   initializeDrawer();
 });
+

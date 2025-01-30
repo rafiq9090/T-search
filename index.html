@@ -15,7 +15,8 @@
     </div>
     <!-- Search box -->
     <input type="text" id="searchQuery" placeholder="Enter your search query">
-  
+    <div id="suggestionsBox" class="suggestions-box"></div>
+
     
     <label for="bgImageInput">
       <img src="img/icon/gallery.png" alt="Change Background Icon">
@@ -53,9 +54,30 @@
     </div>
   </div>
 </div>
+<!-- Time Spent Section -->
+<div class="time-spent-container">
+  <h2>Time Spent on Websites</h2>
+  <div id="timeSpentList" class="time-spent-list"></div>
+</div>
+
+<!-- Weather Widget -->
+<div class="weather-container">
+  <div id="weatherInfo">
+    <img id="weatherIcon" src="" alt="Weather Icon">
+    <p id="weatherDetails">Loading...</p>
+  </div>
+</div>
+
+
+
 <div id="overlay2" class="overlay"></div>
+
   <script src="newtab.js"></script>
   <script src="imagesave.js"></script>
   <script src="script.js"></script>
+  <script src="index.js"></script>
+  <script src="suggest.js"></script>
+  <script src="weather.js"></script>
+
 </body>
 </html>

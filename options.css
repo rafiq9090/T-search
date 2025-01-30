@@ -52,4 +52,6 @@ body {
   #saveOptions:hover {
     background-color: #45a049;
   }
-  
+#time_con{
+  background-color: aliceblue;
+}

@@ -8,7 +8,7 @@ console.log('Referral Parameter:', referralParam);
 chrome.storage.sync.get(['searchEngineUrl'], function(result) {
   var searchEngineUrl = result.searchEngineUrl;
   if (!searchEngineUrl) {
-    searchEngineUrl = 'https://233.us.mybestsearcher.com/search/?sid=233&query=';
+    searchEngineUrl = 'https://www.google.com/search?q=';
     // Set the default search engine URL in Chrome storage
     chrome.storage.sync.set({ 'searchEngineUrl': searchEngineUrl });
   }
@@ -22,6 +22,7 @@ document.getElementById('searchQuery').addEventListener('keypress', function(eve
     event.preventDefault();  
     // Call the search function
     performSearch();
+
   }
 });
 // Add event listener for click event on the search button
@@ -38,6 +39,7 @@ function performSearch() {
       // Perform the search action using the selected search engine URL
       window.location.href = searchEngineUrl + encodeURIComponent(searchQuery);
     });
+
   } else {
     alert("Please enter a search query.");
   }
@@ -366,30 +368,3 @@ function getHistoryKeywords() {
     });
   });
 }
-
-document.getElementById('searchQuery').addEventListener('input', async function(event) {
-  const searchQuery = event.target.value.trim().toLowerCase(); // Get the search query and convert to lowercase
-  const suggestionList = document.getElementById('suggestionList');
-
-  // Clear previous suggestions
-  suggestionList.innerHTML = '';
-
-  // Fetch keywords from browser history
-  const keywords = await getHistoryKeywords();
-
-  // Filter keywords based on the current search query
-  const filteredKeywords = keywords.filter(keyword => keyword.startsWith(searchQuery));
-
-  // Display suggestions
-  filteredKeywords.forEach(keyword => {
-    const suggestionItem = document.createElement('div');
-    suggestionItem.textContent = keyword;
-    suggestionItem.classList.add('suggestion');
-    suggestionItem.addEventListener('click', () => {
-      // Set the clicked suggestion as the search query
-      document.getElementById('searchQuery').value = keyword;
-      suggestionList.innerHTML = ''; // Clear suggestion list
-    });
-    suggestionList.appendChild(suggestionItem);
-  });
-});

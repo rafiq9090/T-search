@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "T search",
-  "version": "1.1",
+  "version": "1.2",
   "description": "A Custom theme add browser and custom search engine add option with user and user see date and time and website URL add option",
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -16,11 +16,14 @@
   },
   "permissions": [
     "history",
-    "storage"
+    "storage",
+    "tabs"
   ],
+  "background": {
+    "service_worker": "timeSpentTracker.js"
+  },
   "host_permissions": [
     "http://*/*",
     "https://*/*"
-  ],
-  "options_page": "options.html" 
+  ]
 }

@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('img/th.webp'); /* Replace with the path to your background image */
+    background-image: url('img/web.jpg'); /* Replace with the path to your background image */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -122,7 +122,7 @@ label img:hover{
   align-items: center;
   align-content: center;
   margin-right: 20px;
-  background-color:  rgba(220,228,224,1);
+  background-color:  rgba(220,228,224,0.8);
   padding: 8px;
   width: 90px;
   height: 90px;
@@ -242,10 +242,10 @@ label img:hover{
 }
 
   /* Additional Animation Styles */
-  @keyframes backgroundAnimation {
+  /* @keyframes backgroundAnimation {
     0% { background-size: 100% 100%; }
     100% { background-size: 110% 110%; }
-  }
+  } */
 
  /* new update 2024 */
 
@@ -284,7 +284,7 @@ label img:hover{
 }
 /* Button Styles */
 #openDrawerBtn {
-  background-color: #007bff;
+  background-color: #007bff00;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -296,7 +296,7 @@ label img:hover{
   margin: 10px;
 }
 #openDrawerBtn:hover {
-  background-color: #0056b3;
+  background-color: #0057b31a;
 }
 /* File Input Styles */
 input[type="file"] {
@@ -324,3 +324,348 @@ input[type="file"] {
   text-align: left;
   padding: 10px;
 }
+
+/* Time Spent Container */
+.time-spent-container {
+  width: 85%; /* Slightly smaller width for compact design */
+  max-width: 300px; /* Limit maximum width for compactness */
+  margin: 15px auto;
+  padding: 8px; /* Reduce padding */
+  background: rgba(255, 255, 255, 0.52); /* Slightly more transparent */
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px); /* Reduce blur effect */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  height: 150px; /* Reduce height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.time-spent-container::-webkit-scrollbar {
+  display: none; /* Completely hide scrollbar */
+}
+
+/* Title */
+.time-spent-container h2 {
+  font-size: 1rem; /* Smaller font size */
+  color: #444;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Time Spent List */
+.time-spent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Reduced gap for compact layout */
+  align-items: center;
+}
+
+/* Each Time Spent Item */
+.time-spent-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%; /* Adjust width for smaller container */
+  background: #f9f9f9;
+  padding: 4px 8px; /* Reduced padding */
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #555;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.time-spent-list div:hover {
+  transform: translateY(-1px); /* Reduced translate for hover effect */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlight the most visited website */
+.time-spent-list div.most-spent {
+  background: #e3f4e3;
+  color: #2b6b2b;
+  font-weight: 600;
+}
+
+/* Website Name */
+.time-spent-list div span:first-child {
+  flex: 1;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+/* Time Display */
+.time-spent-list div span:last-child {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  color: #666;
+  background: #eaeaea;
+  padding: 2px 6px; /* Reduced padding */
+  border-radius: 4px;
+}
+/* Suggestions Box Container */
+.suggestions-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 5px;
+  transform: translate(-50%, -50%);
+  width: 450px; /* Adjust as needed */
+  max-height: 300px; /* Adjust height */
+  overflow-y: auto;
+  background: #ffffff; /* White background */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+  padding: 10px;
+  display: none; /* Initially hidden */
+}
+.suggestions-box::-webkit-scrollbar {
+  display: none; /* Completely hide scrollbar */
+}
+
+/* Individual Suggestion Items */
+.suggestions-box .suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Effect for Items */
+.suggestions-box .suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Icon */
+.suggestions-box .suggestion-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* Text */
+.suggestions-box .suggestion-item span {
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .suggestions-box {
+    width: 95%;
+    max-width: 350px;
+    max-height: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5px;
+  }
+
+  .suggestions-box .suggestion-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .suggestions-box .suggestion-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+
+/* Very Small Mobile Screens */
+@media (max-width: 480px) {
+  .suggestions-box {
+    width: 90%;
+    max-width: 300px;
+    max-height: 220px;
+    margin-top: 5px;
+
+  }
+
+  .suggestions-box .suggestion-item {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .suggestions-box .suggestion-item img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+}
+
+
+/* === Chrome Style === */
+.chrome-style {
+  border: 1px solid #ccc;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+
+/* Chrome-specific item styling */
+.chrome-style .suggestion-item {
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s ease-in-out;
+}
+.chrome-style .suggestion-item:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* === Edge Style === */
+.edge-style {
+  border: 1px solid #0078d7;
+  background: #f3f3f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 5px;
+}
+
+/* Edge-specific item styling */
+.edge-style .suggestion-item {
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.edge-style .suggestion-item:hover {
+  background: #dce5f5;
+  transform: scale(1.05);
+}
+
+/* === Brave Style === */
+.brave-style {
+  border: 1px solid #ff6600;
+  background: #faf5ee;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+/* Brave-specific item styling */
+.brave-style .suggestion-item {
+  border-left: 3px solid #ff6600;
+  padding-left: 12px;
+}
+.brave-style .suggestion-item:hover {
+  background: #fddec5;
+}
+
+/* === Firefox Style === */
+.firefox-style {
+  border: 1px solid #c54343;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(205, 67, 67, 0.3);
+  margin-top: 5px;
+}
+
+/* Firefox-specific item styling */
+.firefox-style .suggestion-item {
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.firefox-style .suggestion-item:hover {
+  background: #f5e5e5;
+  transform: scale(1.05);
+}
+
+/* === Safari Style === */
+.safari-style {
+  border: 1px solid #0000ff;
+  background: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 255, 0.3);
+  margin-top: 5px;
+}
+
+/* Safari-specific item styling */
+.safari-style .suggestion-item {
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.safari-style .suggestion-item:hover {
+  background: #d0e0f5;
+  transform: scale(1.05);
+}
+
+
+/* === UC browser Style === */
+.ucbrowser-style {
+  border: 1px solid #3366cc;
+  background: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(51, 102, 204, 0.3);
+  margin-top: 5px;
+}
+
+/* UC-specific item styling */
+.ucbrowser-style .suggestion-item {
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.ucbrowser-style .suggestion-item:hover {
+  background: #d9e5f5;
+  transform: scale(1.05);
+}
+
+/* === Vivaldi Style === */
+.vivaldi-style {
+  border: 1px solid #000000;
+  background: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 5px;
+}
+
+/* Vivaldi-specific item styling */
+.vivaldi-style .suggestion-item {
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.vivaldi-style .suggestion-item:hover {
+  background: #d0e0f5;
+  transform: scale(1.05);
+}
+
+/* Weather Widget - Bottom Right Corner */
+.weather-container {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 118px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 5px;
+  font-family: 'Arial', sans-serif;
+  z-index: 1000;
+}
+
+/* Weather Information Layout */
+#weatherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Weather Icon */
+#weatherIcon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Weather Text */
+#weatherDetails {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
